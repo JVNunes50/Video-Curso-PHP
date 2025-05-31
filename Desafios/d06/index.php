@@ -12,33 +12,35 @@
     </header>
     <?php 
         $Dividendo = $_GET['dividendo'] ?? 0;
-        $Divisor = $_GET['divisor'] ?? 0;
+        $Divisor = $_GET['divisor'] ?? 1;
     ?>
     <main>
-        <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
+        <form action="" method="get">
             <label for="dividendo">Dividendo</label>
-            <input type="number" name="dividendo" id="id_dividendo" value="<?=$Dividendo?>">
+            <input type="number" name="dividendo" id="id_dividendo" min="0" value="<?=$Dividendo?>">
 
             <label for="divisor">Divisor</label>
-            <input type="number" name="divisor" id="id_divisor" value="<?=$Divisor?>">
+            <input type="number" name="divisor" id="id_divisor" min= "1" value="<?=$Divisor?>">
 
             <input type="submit" value="Calcular">
         </form>
     </main>
     <section>
+        <h2>Estrutura da divisão</h2>
         <?php
-            try{
-            $cosiente = $Dividendo / $Divisor;
+            $cosiente = intdiv($Dividendo, $Divisor);
             $resto = $Dividendo % $Divisor;
-
-            print "<ul><li>O dividendo é $Dividendo</ul></li>";
-            print "<ul><li>O divisor é $Divisor</ul></li>";
-            print "<ul><li>O cosiente é $cosiente</ul></li>";
-            print "<ul><li>O resto da divisão é $resto</ul></li>";
-            } catch(DivisionByZeroError $e){
-                print"Não pode ser executado um divisão por zero (" . $e->getMessage() . ")";
-            }
         ?>
+        <table class="divisao">
+            <tr>
+                <td><?=$Divisor?></td>
+                <td><?=$Dividendo?></td>
+            </tr>
+            <tr>
+                <td><?=$resto?></td>
+                <td><?=$cosiente?></td>
+            </tr>
+        </table>
     </section>
 </body>
 </html>
