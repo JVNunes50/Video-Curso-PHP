@@ -15,7 +15,7 @@
         $Divisor = $_GET['divisor'] ?? 1;
     ?>
     <main>
-        <form action="" method="get">
+        <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
             <label for="dividendo">Dividendo</label>
             <input type="number" name="dividendo" id="id_dividendo" min="0" value="<?=$Dividendo?>">
 

@@ -14,7 +14,7 @@
     ?>
     <main>
         <h1>Informe o seu salário</h1>
-        <form action="" method="get">
+        <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
             <label for="valor">Digiye o seu salario (R$)</label>
             <input type="number" name="valor" id="id_valor" min="0" step="0.01" value="<?=$salarioUsu?>">
             <?php 
