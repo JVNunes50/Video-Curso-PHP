@@ -15,7 +15,7 @@
     <main>
         <h1>Informe o seu salário</h1>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
-            <label for="valor">Digiye o seu salario (R$)</label>
+            <label for="valor">Digite o seu salario (R$)</label>
             <input type="number" name="valor" id="id_valor" min="0" step="0.01" value="<?=$salarioUsu?>">
             <?php 
                 echo "<p>O valor do salário mínimo nacional é " . numfmt_format_currency($padrao, $salarioMin, "BRL")."</p>";
