@@ -8,7 +8,6 @@
 </head>
 <body>
     <?php 
-        date_default_timezone_set("America/Sao_Paulo");
         $nascimento = $_REQUEST['nascimento'] ?? 2004;
         $ano = $_REQUEST['ano'] ?? date('Y');
     ?>
@@ -16,7 +15,7 @@
         <h1>Calcule a sua idade</h1>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
             <label for="nascimento">Digite o ano que você nasceu:</label>
-            <input type="number" name="nascimento" id="id_nascimento" value="<?=$nascimento?>">
+            <input type="number" name="nascimento" id="id_nascimento" value="<?=$nascimento?>" max="<?=date('Y')?>">
 
             <label for="ano">Quer saber sua idade em que ano? (Atualmente estamos em <?=date('Y')?>):</label>
             <input type="number" name="ano" id="id_ano" value="<?=$ano?>">
@@ -28,8 +27,11 @@
         <h2>Resultado</h2>
         <?php 
             $resultado = $ano - $nascimento;
-
-            echo "Quem nasceu em $nascimento vai ter $resultado em $ano!";
+            if ($resultado < 0) {
+                echo"O resultado da idade foi negativo, coloque um ano valido para o calculo!";
+            } else {
+                echo "Quem nasceu em $nascimento vai ter $resultado em $ano!";
+            }
         ?>
     </section>
 </body>
