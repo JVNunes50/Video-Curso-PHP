@@ -25,13 +25,32 @@
     </main>
     <section>
         <?php 
+            $resto = $valor;
+            $tot100 = intdiv($resto, 100);
+            $resto %= 100;
+            $tot50 = intdiv($resto, 50);
+            $resto %= 50;
+            $tot20 = intdiv($resto, 20);
+            $resto %= 20;
+            $tot10 = intdiv($resto, 10);
+            $resto %= 10;
+            $tot5 = intdiv($resto, 5);
+            $resto %= 5;
+            $tot2 = intdiv($resto, 2);
+            $resto %= 2;
+            $tot1 = intdiv($resto, 1);
+
             echo"<h2> Saque de ". numfmt_format_currency($padrao, $valor, 'BRL') ." realziado </h2>";
         ?>
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <p>O caixa eletrônico vai te entragar as seguintes cédulas:</p>
+            <li><img class="real1" src="Imagens/100-reais.jpg"> <?="x$tot100"?></li>
+            <li><img class="real1" src="Imagens/50-reais.jpg"> <?="x$tot50"?></li>
+            <li><img class="real1" src="Imagens/20-reais.jpg"> <?="x$tot20"?></li>
+            <li><img class="real1" src="Imagens/10-reais.jpg"> <?="x$tot10"?></li>
+            <li><img class="real1" src="Imagens/5-reais.jpg"> <?="x$tot5"?></li>
+            <li><img class="real1" src="Imagens/2-reais.jpg"> <?="x$tot2"?></li>
+            <li><img class="real1" src="Imagens/1-real.jpg"> <?="x$tot1"?></li>
         </ul>
     </section>
 </body>
