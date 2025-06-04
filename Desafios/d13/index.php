@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">\
+    <style>
+        img.nota{
+            height: 50px;
+            margin: 5px;
+        }
+    </style>
     <title>Caixa Eletrônico</title>
 </head>
 <body>
@@ -44,13 +50,13 @@
         ?>
         <ul>
             <p>O caixa eletrônico vai te entragar as seguintes cédulas:</p>
-            <li><img class="real1" src="Imagens/100-reais.jpg"> <?="x$tot100"?></li>
-            <li><img class="real1" src="Imagens/50-reais.jpg"> <?="x$tot50"?></li>
-            <li><img class="real1" src="Imagens/20-reais.jpg"> <?="x$tot20"?></li>
-            <li><img class="real1" src="Imagens/10-reais.jpg"> <?="x$tot10"?></li>
-            <li><img class="real1" src="Imagens/5-reais.jpg"> <?="x$tot5"?></li>
-            <li><img class="real1" src="Imagens/2-reais.jpg"> <?="x$tot2"?></li>
-            <li><img class="real1" src="Imagens/1-real.jpg"> <?="x$tot1"?></li>
+            <li><img class="nota" src="Imagens/100-reais.jpg"> <?="x$tot100"?></li>
+            <li><img class="nota" src="Imagens/50-reais.jpg"> <?="x$tot50"?></li>
+            <li><img class="nota" src="Imagens/20-reais.jpg"> <?="x$tot20"?></li>
+            <li><img class="nota" src="Imagens/10-reais.jpg"> <?="x$tot10"?></li>
+            <li><img class="nota" src="Imagens/5-reais.jpg"> <?="x$tot5"?></li>
+            <li><img class="nota" src="Imagens/2-reais.jpg"> <?="x$tot2"?></li>
+            <li><img class="nota" src="Imagens/1-real.jpg"> <?="x$tot1"?></li>
         </ul>
     </section>
 </body>
